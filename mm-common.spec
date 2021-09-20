@@ -4,7 +4,7 @@
 #
 Name     : mm-common
 Version  : 1.0.3
-Release  : 2
+Release  : 3
 URL      : https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.3.tar.xz
 Source0  : https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.3.tar.xz
 Summary  : mm-common's doctool build utilities for the GNOME C++ bindings
@@ -90,15 +90,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621521897
+export SOURCE_DATE_EPOCH=1632163171
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
-export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=auto "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=auto "
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --libdir=lib64 --prefix=/usr --buildtype=plain   builddir
 ninja -v -C builddir
 
@@ -140,12 +140,12 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/share/mm-common/doctool/doxygen-extra.css
 /usr/share/mm-common/doctool/doxygen.css
 /usr/share/mm-common/doctool/tagfile-to-devhelp2.xsl
-/usr/share/pkgconfig/mm-common-libstdc++.pc
-/usr/share/pkgconfig/mm-common-util.pc
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/aclocal/*.m4
+/usr/share/pkgconfig/mm-common-libstdc++.pc
+/usr/share/pkgconfig/mm-common-util.pc
 
 %files doc
 %defattr(0644,root,root,0755)
