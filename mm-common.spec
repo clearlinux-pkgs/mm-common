@@ -4,7 +4,7 @@
 #
 Name     : mm-common
 Version  : 1.0.4
-Release  : 5
+Release  : 6
 URL      : https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz
 Source0  : https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz
 Summary  : mm-common's doctool build utilities for the GNOME C++ bindings
