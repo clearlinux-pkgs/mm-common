@@ -4,7 +4,7 @@
 #
 Name     : mm-common
 Version  : 1.0.4
-Release  : 6
+Release  : 7
 URL      : https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz
 Source0  : https://download.gnome.org/sources/mm-common/1.0/mm-common-1.0.4.tar.xz
 Summary  : mm-common's doctool build utilities for the GNOME C++ bindings
@@ -90,7 +90,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1644879316
+export SOURCE_DATE_EPOCH=1664159437
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -111,8 +111,8 @@ meson test -C builddir --print-errorlogs
 
 %install
 mkdir -p %{buildroot}/usr/share/package-licenses/mm-common
-cp %{_builddir}/mm-common-1.0.4/COPYING %{buildroot}/usr/share/package-licenses/mm-common/06877624ea5c77efe3b7e39b0f909eda6e25a4ec
-cp %{_builddir}/mm-common-1.0.4/skeletonmm/COPYING %{buildroot}/usr/share/package-licenses/mm-common/9a1929f4700d2407c70b507b3b2aaf6226a9543c
+cp %{_builddir}/mm-common-%{version}/COPYING %{buildroot}/usr/share/package-licenses/mm-common/06877624ea5c77efe3b7e39b0f909eda6e25a4ec || :
+cp %{_builddir}/mm-common-%{version}/skeletonmm/COPYING %{buildroot}/usr/share/package-licenses/mm-common/9a1929f4700d2407c70b507b3b2aaf6226a9543c || :
 DESTDIR=%{buildroot} ninja -C builddir install
 
 %files
